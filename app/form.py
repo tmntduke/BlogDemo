@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms.validators import DataRequired
-from wtforms import StringField, BooleanField
+from wtforms.validators import DataRequired, Length
+from wtforms import StringField, BooleanField, TextAreaField
 
 
 class LoginForm(FlaskForm):
@@ -14,3 +14,8 @@ class RegisterForm(FlaskForm):
     username = StringField('username', validators=[DataRequired()])
     password = StringField('password', validators=[DataRequired()])
     email = StringField('email', validators=[DataRequired()])
+
+
+class EditForm(FlaskForm):
+    nickname = StringField('nickname', validators=[DataRequired()])
+    about_me = TextAreaField('about_me', validators=[Length(min=0, max=140)])
