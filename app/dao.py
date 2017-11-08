@@ -4,6 +4,7 @@ import hashlib
 from app import engine
 
 
+# 数据库实体
 class Person(Base):
     __tablename__ = 't_user'
     id = Column(Integer, primary_key=True, autoincrement=True)

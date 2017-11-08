@@ -102,6 +102,18 @@ def select_db(username, pword):
         return True
 
 
+@app.errorhandler(404)
+def internal_error(error):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    session = DBSession()
+    session.rollback()
+    return render_template('500.html'), 500
+
+
 def update_about(current, nickname, about):
     print(current)
     session = DBSession()

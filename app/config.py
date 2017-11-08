@@ -1,4 +1,4 @@
-
+# flask配置
 CSRF_ENABLED = True
 SECRET_KEY = 'you-will-never-guess'
 OPENID_PROVIDERS = [
@@ -8,4 +8,11 @@ OPENID_PROVIDERS = [
     {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
     {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
 
+# mail server settings
+MAIL_SERVER = 'localhost'
+MAIL_PORT = 25
+MAIL_USERNAME = 'tmntduke'
+MAIL_PASSWORD = 'yy20140316'
 
+# administrator list
+ADMINS = ['tmntduke@hotmail.com']
